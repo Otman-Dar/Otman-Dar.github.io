@@ -1,11 +1,465 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otman DARIR — Ingénieur Électronicien</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Otman<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#experiences">Expériences</a></li>
+    <li><a href="#formation">Formation</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#apropos">À propos</a>
+  <a href="#competences">Compétences</a>
+  <a href="#experiences">Expériences</a>
+  <a href="#formation">Formation</a>
+  <a href="#projets">Projets</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-tag">⚡ Ingénieur Électronicien · Argenteuil, France</div>
+    <h1 class="hero-name">
+      <span class="accent">Otman</span> DARIR
+    </h1>
+    <p class="hero-subtitle">
+      <span id="typing-text"></span><span class="typing-cursor"></span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#projets" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        Voir mes projets
+      </a>
+      <a href="#contact" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Me contacter
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ À PROPOS ═══ -->
+<section id="apropos">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">01 — Présentation</div>
+      <h2 class="section-title">À propos de moi</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-avatar-wrap fade-in">
+        <div class="about-avatar">
+          <div class="avatar-ring"></div>
+          <img
+            src="images/DARIR_Otman_Profile.webp"
+            alt="Otman DARIR — Ingénieur électronicien"
+            class="avatar-photo"
+            width="560"
+            height="560"
+            loading="lazy"
+            decoding="async"
+          >
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="fade-in fade-in-delay-1">
+          <h2>Électronicien passionné par l'IA & les systèmes embarqués</h2>
+          <p>
+            Diplômé d'un double master en Mesure & Traitement de l'Information (Université de Lorraine) et en Contrôle Informatique Industriel, je développe des solutions à l'intersection du traitement du signal, du deep learning et des systèmes embarqués.
+          </p>
+          <p>
+            Mon expérience couvre la synthèse de données par réseaux génératifs (VAE, GAN), le contrôle de systèmes temps-réel et l'IoT industriel. Curieux, rigoureux et ouvert à la mobilité internationale, je recherche des défis techniques stimulants.
+          </p>
+        </div>
+        <div class="about-badges fade-in fade-in-delay-2">
+          <span class="badge">🎓 Double Master</span>
+          <span class="badge">📍 Argenteuil, France</span>
+          <span class="badge">🌍 Mobilité internationale</span>
+          <span class="badge">🔬 Deep Learning</span>
+        </div>
+        <div class="about-stats fade-in fade-in-delay-3">
+          <div class="stat-card">
+            <span class="stat-num counter" data-target="3">0</span>
+            <div class="stat-label">Stages réalisés</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num counter" data-target="2">0</span>
+            <div class="stat-label">Masters obtenus</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num counter" data-target="4">0</span>
+            <div class="stat-label">Projets académiques</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPÉTENCES ═══ -->
+<section id="competences">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">02 — Skills</div>
+      <h2 class="section-title">Compétences</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-card-icon">🤖</div>
+        <h3>IA & Traitement du Signal</h3>
+        <div class="skill-pills">
+          <span class="pill pill-cyan">PyTorch</span>
+          <span class="pill pill-cyan">TensorFlow</span>
+          <span class="pill pill-cyan">MATLAB</span>
+          <span class="pill pill-cyan">VAE</span>
+          <span class="pill pill-cyan">GAN</span>
+          <span class="pill pill-cyan">MediaPipe</span>
+          <span class="pill pill-cyan">OpenCV</span>
+          <span class="pill pill-cyan">Deep Learning</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in fade-in-delay-1">
+        <div class="skill-card-icon">💻</div>
+        <h3>Programmation</h3>
+        <div class="skill-pills">
+          <span class="pill pill-violet">Python</span>
+          <span class="pill pill-violet">C/C++</span>
+          <span class="pill pill-violet">JavaScript</span>
+          <span class="pill pill-violet">HTML/CSS</span>
+          <span class="pill pill-violet">MATLAB</span>
+          <span class="pill pill-violet">Unity3D</span>
+          <span class="pill pill-violet">Git</span>
+        </div>
+      </div>
+      <div class="skill-card fade-in fade-in-delay-2">
+        <div class="skill-card-icon">⚙️</div>
+        <h3>Systèmes Embarqués & IoT</h3>
+        <div class="skill-pills">
+          <span class="pill pill-teal">Arduino</span>
+          <span class="pill pill-teal">IoT Azure Sphere</span>
+          <span class="pill pill-teal">I2C</span>
+          <span class="pill pill-teal">PCA9685</span>
+          <span class="pill pill-teal">Linux</span>
+          <span class="pill pill-teal">Capteurs IMU</span>
+          <span class="pill pill-teal">Azure Cloud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPÉRIENCES ═══ -->
+<section id="experiences">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">03 — Parcours</div>
+      <h2 class="section-title">Expériences</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item fade-in">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">2025 — En cours</div>
+        <div class="timeline-card">
+          <h3>Stage de Recherche — LCOMS</h3>
+          <div class="org">Université de Lorraine, Metz 🇫🇷</div>
+          <ul>
+            <li>Augmentation de dataset IMU par Deep Learning (VAE & GAN)</li>
+            <li>Génération de données synthétiques pour accéléromètre et gyroscope</li>
+            <li>Évaluation qualitative et quantitative des distributions générées</li>
+          </ul>
+          <div class="skill-pills">
+            <span class="pill pill-cyan">PyTorch</span>
+            <span class="pill pill-cyan">TensorFlow</span>
+            <span class="pill pill-cyan">MATLAB</span>
+            <span class="pill pill-cyan">VAE</span>
+            <span class="pill pill-cyan">GAN</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in fade-in-delay-1">
+        <div class="timeline-dot violet"></div>
+        <div class="timeline-date violet">2023</div>
+        <div class="timeline-card">
+          <h3>Stage Ingénierie — LISA, ENSA</h3>
+          <div class="org">École Nationale des Sciences Appliquées, Marrakech 🇲🇦</div>
+          <ul>
+            <li>Optimisation d'un véhicule électrique par logique floue</li>
+            <li>Gestion intelligente de batterie selon les modes de conduite</li>
+            <li>Développement d'algorithmes de priorisation énergétique</li>
+          </ul>
+          <div class="skill-pills">
+            <span class="pill pill-violet">Logique Floue</span>
+            <span class="pill pill-violet">Gestion Batterie</span>
+            <span class="pill pill-violet">MATLAB</span>
+            <span class="pill pill-violet">Véhicule Électrique</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item fade-in fade-in-delay-2">
+        <div class="timeline-dot teal"></div>
+        <div class="timeline-date teal">2022</div>
+        <div class="timeline-card">
+          <h3>Stage Technique — AFROLAB</h3>
+          <div class="org">Laboratoire de métrologie, Agadir 🇲🇦</div>
+          <ul>
+            <li>Étalonnage et réparation d'instruments de mesure industriels</li>
+            <li>Application des procédures de métrologie et tests standardisés</li>
+            <li>Maintenance préventive et corrective du parc instruments</li>
+          </ul>
+          <div class="skill-pills">
+            <span class="pill pill-teal">Métrologie</span>
+            <span class="pill pill-teal">Maintenance</span>
+            <span class="pill pill-teal">Tests standardisés</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORMATION ═══ -->
+<section id="formation">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">04 — Études</div>
+      <h2 class="section-title">Formation</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-list">
+
+      <div class="edu-card fade-in">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-years">2023 – 2025</div>
+          <div class="edu-degree">Master EEA — Mesure & Traitement de l'Information</div>
+          <div class="edu-school">Université de Lorraine, Metz <span class="flag">🇫🇷</span></div>
+        </div>
+      </div>
+
+      <div class="edu-card fade-in fade-in-delay-1">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-years">2021 – 2023</div>
+          <div class="edu-degree">Master Contrôle Informatique Industriel</div>
+          <div class="edu-school">Faculté des Sciences Semlalia, Marrakech <span class="flag">🇲🇦</span></div>
+        </div>
+      </div>
+
+      <div class="edu-card fade-in fade-in-delay-2">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-years">2018 – 2021</div>
+          <div class="edu-degree">Licence Sciences Physiques — Électronique</div>
+          <div class="edu-school">Faculté des Sciences, Agadir <span class="flag">🇲🇦</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJETS ═══ -->
+<section id="projets">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">05 — Réalisations</div>
+      <h2 class="section-title">Projets</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card fade-in">
+        <span class="project-emoji">🎮</span>
+        <div class="project-title">Avatar Temps Réel</div>
+        <p class="project-desc">Synchronisation d'un avatar 3D avec les mouvements du corps en temps réel via détection de squelette et animation procédurale.</p>
+        <div class="project-tags">
+          <span class="tag">Unity3D</span>
+          <span class="tag">MediaPipe</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Animation 3D</span>
+          <span class="tag">Suivi gestuel</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in fade-in-delay-1">
+        <span class="project-emoji">✋</span>
+        <div class="project-title">Contrôle Gestuel Volume & Éclairage</div>
+        <p class="project-desc">Interface de contrôle sans contact permettant de régler le volume audio et l'éclairage via la détection et le suivi des doigts en temps réel.</p>
+        <div class="project-tags">
+          <span class="tag">MediaPipe</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Détection de doigts</span>
+          <span class="tag">Traitement d'images</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in fade-in-delay-2">
+        <span class="project-emoji">🤖</span>
+        <div class="project-title">Robot Hexapode Embarqué</div>
+        <p class="project-desc">Conception et programmation d'un robot hexapode avec contrôle de 18 servomoteurs via bus I2C, gestion de l'alimentation et coordination des membres.</p>
+        <div class="project-tags">
+          <span class="tag">Arduino</span>
+          <span class="tag">PCA9685</span>
+          <span class="tag">I2C</span>
+          <span class="tag">18 servomoteurs</span>
+          <span class="tag">Alimentation</span>
+        </div>
+      </div>
+
+      <div class="project-card fade-in fade-in-delay-3">
+        <span class="project-emoji">☁️</span>
+        <div class="project-title">IoT Azure Sphere MT3620</div>
+        <p class="project-desc">Déploiement d'une solution IoT sécurisée sur Azure Sphere MT3620 avec connectivité cloud, acquisition de données Grove et automatisation.</p>
+        <div class="project-tags">
+          <span class="tag">Azure Cloud</span>
+          <span class="tag">I2C</span>
+          <span class="tag">Grove</span>
+          <span class="tag">Sécurité</span>
+          <span class="tag">Automatisation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LANGUES ═══ -->
+<section id="langues">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">06 — Langues</div>
+      <h2 class="section-title">Maîtrise linguistique</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="languages-grid">
+
+      <div class="lang-card fade-in">
+        <span class="lang-flag">🇲🇦</span>
+        <h3 class="lang-name">Arabe</h3>
+        <p class="lang-level">Maternelle</p>
+      </div>
+
+      <div class="lang-card fade-in fade-in-delay-1">
+        <span class="lang-flag">🇫🇷</span>
+        <h3 class="lang-name">Français</h3>
+        <p class="lang-level">Bilingue</p>
+      </div>
+
+      <div class="lang-card fade-in fade-in-delay-2">
+        <span class="lang-flag">🇬🇧</span>
+        <h3 class="lang-name">Anglais</h3>
+        <p class="lang-level">Courant</p>
+      </div>
+
+      <div class="lang-card fade-in fade-in-delay-3">
+        <span class="lang-flag">🇪🇸</span>
+        <h3 class="lang-name">Espagnol</h3>
+        <p class="lang-level">Notions</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">07 — Contact</div>
+      <h2 class="section-title">Me contacter</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-center">
+      <div class="contact-card fade-in">
+        <h3>Travaillons ensemble</h3>
+        <p>Disponible pour des opportunités en France et à l'international. N'hésitez pas à me contacter pour discuter d'un projet ou d'un poste.</p>
+
+        <div class="availability">
+          <div class="avail-dot"></div>
+          Disponible · Stage / CDI · Mobilité internationale
+        </div>
+
+        <div class="contact-items">
+          <a href="mailto:Otman.darir1@gmail.com" class="contact-item">
+            <div class="contact-item-icon icon-cyan">📧</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Email</div>
+              Otman.darir1@gmail.com
+            </div>
+          </a>
+          <a href="tel:+33625718308" class="contact-item">
+            <div class="contact-item-icon icon-violet">📞</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Téléphone</div>
+              +33 6 25 71 83 08
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon icon-teal">📍</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Localisation</div>
+              Argenteuil, France
+            </div>
+          </div>
+        </div>
+
+        <a href="mailto:Otman.darir1@gmail.com?subject=Prise de contact — Portfolio" class="btn-primary" style="width: 100%; justify-content: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          M'envoyer un message
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    Conçu & développé par <span>Otman DARIR</span> © <span id="copyright-year"></span>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:Otman.darir1@gmail.com">Email</a>
+    <a href="https://github.com/Otman-Dar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+    <a href="https://www.linkedin.com/in/otman-darir?skipRedirect=true&miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADbBPrcBTepPwNuGz1cdSn_4ICdUAjDaDCE" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
 </body>
 </html>

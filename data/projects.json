@@ -1,0 +1,62 @@
+{
+  "categories": {
+    "vision": { "label": "Vision & IA", "accent": "cyan" },
+    "embedded": { "label": "Embarqué", "accent": "violet" },
+    "iot": { "label": "IoT & Cloud", "accent": "teal" },
+    "signal": { "label": "Signal & Données", "accent": "violet" }
+  },
+  "projects": [
+    {
+      "id": "avatar-temps-reel",
+      "emoji": "🎮",
+      "title": "Avatar Temps Réel",
+      "description": "Synchronisation d'un avatar 3D avec les mouvements du corps en temps réel via détection de squelette et animation procédurale.",
+      "tags": ["Unity3D", "MediaPipe", "OpenCV", "Animation 3D", "Suivi gestuel"],
+      "category": "vision",
+      "year": "2024",
+      "links": {
+        "github": "",
+        "demo": "",
+        "video": ""
+      }
+    },
+    {
+      "id": "controle-gestuel",
+      "emoji": "✋",
+      "title": "Contrôle Gestuel Volume & Éclairage",
+      "description": "Interface de contrôle sans contact pour régler le volume audio et l'éclairage via détection et suivi des doigts en temps réel.",
+      "tags": ["MediaPipe", "OpenCV", "Détection de doigts", "Traitement d'images"],
+      "category": "vision",
+      "year": "2024",
+      "links": {
+        "github": "",
+        "demo": ""
+      }
+    },
+    {
+      "id": "hexapode",
+      "emoji": "🤖",
+      "title": "Robot Hexapode Embarqué",
+      "description": "Conception et programmation d'un robot hexapode — contrôle de 18 servomoteurs via I2C, gestion de l'alimentation et coordination des membres.",
+      "tags": ["Arduino", "PCA9685", "I2C", "18 servomoteurs", "Alimentation"],
+      "category": "embedded",
+      "year": "2023",
+      "links": {
+        "github": ""
+      }
+    },
+    {
+      "id": "azure-sphere",
+      "emoji": "☁️",
+      "title": "IoT Azure Sphere MT3620",
+      "description": "Solution IoT sécurisée sur Azure Sphere MT3620 : connectivité cloud, capteurs Grove et automatisation des acquisitions.",
+      "tags": ["Azure Cloud", "I2C", "Grove", "Sécurité", "Automatisation"],
+      "category": "iot",
+      "year": "2023",
+      "links": {
+        "github": "https://github.com/Otman-Dar/MT3620_Grove_Shield_BME280",
+        "demo": ""
+      }
+    }
+  ]
+}

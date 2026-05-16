@@ -216,3 +216,107 @@ document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el))
 
 const copyrightYear = document.getElementById('copyright-year');
 if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+
+/* ═══════════════════════════════════
+   PROJECTS (data/projects.json)
+═══════════════════════════════════ */
+(function initProjects() {
+  const grid = document.getElementById('projects-grid');
+  const filtersEl = document.getElementById('projects-filters');
+  const countEl = document.getElementById('projects-count');
+  if (!grid) return;
+
+  let allProjects = [];
+  let categories = {};
+  let activeFilter = 'all';
+
+  function escapeHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
+  function getCategoryMeta(key) {
+    return categories[key] || { label: key, accent: 'cyan' };
+  }
+
+  function buildLink(label, url, icon) {
+    if (!url || !String(url).trim()) return '';
+    return `<a href="${escapeHtml(url)}" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label)}">${icon}<span>${escapeHtml(label)}</span></a>`;
+  }
+
+  function renderCard(project, index) {
+    const cat = getCategoryMeta(project.category);
+    const accent = cat.accent || 'cyan';
+    const delayClass = index > 0 ? ` fade-in-delay-${Math.min(index % 4, 3)}` : '';
+    const links = project.links || {};
+    const linksHtml = [
+      buildLink('GitHub', links.github, '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A8.203 8.203 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>'),
+      buildLink('Démo', links.demo, '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'),
+      buildLink('Vidéo', links.video, '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>')
+    ].filter(Boolean).join('');
+    const tagsHtml = (project.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+
+    return [
+      `<article class="project-card fade-in${delayClass}" data-category="${escapeHtml(project.category || '')}" data-accent="${escapeHtml(accent)}">`,
+      '<div class="project-card-glow" aria-hidden="true"></div>',
+      '<div class="project-card-inner">',
+      '<header class="project-card-header">',
+      '<div class="project-visual">',
+      `<span class="project-emoji" aria-hidden="true">${project.emoji || '📁'}</span>`,
+      `<span class="project-index">PRJ·${String(index + 1).padStart(2, '0')}</span>`,
+      '</div>',
+      '<div class="project-meta">',
+      `<span class="project-category">${escapeHtml(cat.label)}</span>`,
+      project.year ? `<span class="project-year">${escapeHtml(String(project.year))}</span>` : '',
+      '</div></header>',
+      `<h3 class="project-title">${escapeHtml(project.title)}</h3>`,
+      `<p class="project-desc">${escapeHtml(project.description)}</p>`,
+      `<div class="project-tags">${tagsHtml}</div>`,
+      linksHtml ? `<div class="project-links">${linksHtml}</div>` : '',
+      '</div></article>'
+    ].join('');
+  }
+
+  function renderFilters() {
+    if (!filtersEl) return;
+    const used = [...new Set(allProjects.map(p => p.category).filter(Boolean))];
+    filtersEl.innerHTML = [
+      '<button type="button" class="project-filter is-active" data-filter="all">Tous</button>',
+      ...used.map(key => {
+        const meta = getCategoryMeta(key);
+        return `<button type="button" class="project-filter" data-filter="${escapeHtml(key)}" data-accent="${escapeHtml(meta.accent)}">${escapeHtml(meta.label)}</button>`;
+      })
+    ].join('');
+    filtersEl.querySelectorAll('.project-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.filter;
+        filtersEl.querySelectorAll('.project-filter').forEach(b => b.classList.toggle('is-active', b === btn));
+        renderProjects();
+      });
+    });
+  }
+
+  function renderProjects() {
+    const list = activeFilter === 'all' ? allProjects : allProjects.filter(p => p.category === activeFilter);
+    if (countEl) countEl.textContent = list.length === 1 ? '1 projet' : `${list.length} projets`;
+    if (!list.length) {
+      grid.innerHTML = '<p class="projects-empty fade-in visible">Aucun projet dans cette catégorie.</p>';
+      return;
+    }
+    grid.innerHTML = list.map((p, i) => renderCard(p, i)).join('');
+    grid.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  }
+
+  fetch(new URL('data/projects.json', document.baseURI))
+    .then(res => { if (!res.ok) throw new Error(); return res.json(); })
+    .then(data => {
+      categories = data.categories || {};
+      allProjects = data.projects || [];
+      renderFilters();
+      renderProjects();
+    })
+    .catch(() => {
+      grid.innerHTML = '<p class="projects-error fade-in visible">Impossible de charger les projets. Ouvrez le site avec <strong>Live Server</strong>.</p>';
+    });
+})();

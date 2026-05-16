@@ -302,60 +302,12 @@
       <h2 class="section-title">Projets</h2>
       <div class="section-line"></div>
     </div>
-    <div class="projects-grid">
-
-      <div class="project-card fade-in">
-        <span class="project-emoji">🎮</span>
-        <div class="project-title">Avatar Temps Réel</div>
-        <p class="project-desc">Synchronisation d'un avatar 3D avec les mouvements du corps en temps réel via détection de squelette et animation procédurale.</p>
-        <div class="project-tags">
-          <span class="tag">Unity3D</span>
-          <span class="tag">MediaPipe</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Animation 3D</span>
-          <span class="tag">Suivi gestuel</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in fade-in-delay-1">
-        <span class="project-emoji">✋</span>
-        <div class="project-title">Contrôle Gestuel Volume & Éclairage</div>
-        <p class="project-desc">Interface de contrôle sans contact permettant de régler le volume audio et l'éclairage via la détection et le suivi des doigts en temps réel.</p>
-        <div class="project-tags">
-          <span class="tag">MediaPipe</span>
-          <span class="tag">OpenCV</span>
-          <span class="tag">Détection de doigts</span>
-          <span class="tag">Traitement d'images</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in fade-in-delay-2">
-        <span class="project-emoji">🤖</span>
-        <div class="project-title">Robot Hexapode Embarqué</div>
-        <p class="project-desc">Conception et programmation d'un robot hexapode avec contrôle de 18 servomoteurs via bus I2C, gestion de l'alimentation et coordination des membres.</p>
-        <div class="project-tags">
-          <span class="tag">Arduino</span>
-          <span class="tag">PCA9685</span>
-          <span class="tag">I2C</span>
-          <span class="tag">18 servomoteurs</span>
-          <span class="tag">Alimentation</span>
-        </div>
-      </div>
-
-      <div class="project-card fade-in fade-in-delay-3">
-        <span class="project-emoji">☁️</span>
-        <div class="project-title">IoT Azure Sphere MT3620</div>
-        <p class="project-desc">Déploiement d'une solution IoT sécurisée sur Azure Sphere MT3620 avec connectivité cloud, acquisition de données Grove et automatisation.</p>
-        <div class="project-tags">
-          <span class="tag">Azure Cloud</span>
-          <span class="tag">I2C</span>
-          <span class="tag">Grove</span>
-          <span class="tag">Sécurité</span>
-          <span class="tag">Automatisation</span>
-        </div>
-      </div>
-
+    <div class="projects-toolbar fade-in">
+      <div class="projects-filters" id="projects-filters" role="tablist" aria-label="Filtrer les projets"></div>
+      <span class="projects-count" id="projects-count" aria-live="polite"></span>
     </div>
+
+    <div class="projects-showcase" id="projects-grid" aria-live="polite"></div>
   </div>
 </section>
 

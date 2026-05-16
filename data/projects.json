@@ -9,9 +9,9 @@
     {
       "id": "avatar-temps-reel",
       "emoji": "🎮",
-      "title": "Avatar Temps Réel",
-      "description": "Synchronisation d'un avatar 3D avec les mouvements du corps en temps réel via détection de squelette et animation procédurale.",
-      "tags": ["Unity3D", "MediaPipe", "OpenCV", "Animation 3D", "Suivi gestuel"],
+      "title": "Création et Contrôle d'un Avatar en Temps Réel",
+      "description": "Développement d'une application sous Unity3D avec intégration de MediaPipe et OpenCV pour le suivi gestuel et l’animation 3D en temps réel. Synchronisation des mouvements de l’utilisateur avec l’avatar afin d’assurer une interaction fluide et naturelle.",
+      "tags": ["Unity3D", "MediaPipe", "OpenCV", "Vision par ordinateur", "Animation 3D"],
       "category": "vision",
       "year": "2024",
       "links": {
@@ -23,9 +23,9 @@
     {
       "id": "controle-gestuel",
       "emoji": "✋",
-      "title": "Contrôle Gestuel Volume & Éclairage",
-      "description": "Interface de contrôle sans contact pour régler le volume audio et l'éclairage via détection et suivi des doigts en temps réel.",
-      "tags": ["MediaPipe", "OpenCV", "Détection de doigts", "Traitement d'images"],
+      "title": "Contrôle du Volume et de l'Éclairage par Gestes",
+      "description": "Développement d'un système de contrôle du volume et de l'éclairage basé sur la reconnaissance gestuelle en temps réel. Implémentation de la détection des gestes à partir de la distance entre les doigts à l’aide de MediaPipe Hands et du traitement d’images avec OpenCV.",
+      "tags": ["Python", "OpenCV", "MediaPipe Hands", "Vision par ordinateur", "Traitement d'images"],
       "category": "vision",
       "year": "2024",
       "links": {
